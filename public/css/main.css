@@ -1,0 +1,13 @@
+.row {
+  margin-top: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.message-box {
+  border: solid gray;
+  border-width: 1px;
+  min-height: 100px;
+}

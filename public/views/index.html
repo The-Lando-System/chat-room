@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Chat Room</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div ng-controller="chatController">
+    <div class="jumbotron">
+      <div class="container center">
+        <h1>{{welcome}}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container message-box">
+        <div ng-repeat="currentMessage in messages track by $index">
+          {{currentMessage}}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container center">
+        <input autocomplete="off" ng-model="message"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container center">
+        <button class="btn btn-info btn-lg" ng-click="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="libs/jquery/dist/jquery.js"></script>
+  <script src="libs/angular/angular.js"></script>
+
+  <script src="js/app.module.js"></script>
+  <script src="js/ChatCtrl.js"></script>
+
+</body>
+</html>
